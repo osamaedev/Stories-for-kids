@@ -8,9 +8,6 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.core.widget.ImageViewCompat;
-import androidx.core.widget.TextViewCompat;
-
 import com.easyandroidanimations.library.FadeInAnimation;
 import com.easyandroidanimations.library.PuffInAnimation;
 import com.yoham.storieskids.R;
