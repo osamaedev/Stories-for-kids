@@ -60,7 +60,7 @@ public class SplashActivity extends BaseActivity implements ISplashView {
 
     @Override
     public void setUp() {
-        mPresenter.onShowRateUsDecision();              // make the decision to show the rate us or not
+        mPresenter.onShowRateUsDecision();
     }
 
     @Override
