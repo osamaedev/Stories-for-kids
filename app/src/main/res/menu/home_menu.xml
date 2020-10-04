@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="right"
+    android:gravity="right">
+    <item
+        android:id="@+id/favoris_menu_item"
+        android:title="@string/favoris"
+        android:icon="@drawable/ic_favorite"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/contact_report_menu_item"
+        android:title="@string/contact_report"
+        android:icon="@drawable/ic_report_contact"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/about_menu_item"
+        android:title="@string/about"
+        android:icon="@drawable/ic_about"
+        app:showAsAction="never"/>
+</menu>

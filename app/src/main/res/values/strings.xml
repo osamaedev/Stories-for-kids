@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">قصص و حكايات أطفال</string>
+    <string name="version">تطبيق قصص و حكايات أطفال إصدار رقم :</string>
+    <string name="dev_email">developer\'s mail: yohamdev@engineer.com</string>
+    <string name="facebook_app_id">330311461246322</string>
+    <string name="fb_login_protocol_scheme">fb330311461246322</string>
+
+
+    <string name="favoris">مفضلتي</string>
+    <string name="contact_report">مراسلة أو تبليغ</string>
+    <string name="about">عن التطبيق</string>
+    <string name="add_to_favorites">إضافة لمفضلتي</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="no_story_in_favourites">لم يتم إضافة أي قصة لحد الآن.</string>
+
+
+    <!-- messages -->
+    <string name="added_to_favourites">تمت إضافة القصة إلى لائحة -مفضلتي-</string>
+    <string name="removed_from_favourites"> تم حذف القصة من لائحة -مفضلتي-</string>
+    <string name="general_error">وقع حطأ ما، حاول بعد قليل</string>
+    <string name="click_once">أنقر مرة واحدة :)</string>
+    <string name="no_internet">لايوجد اتصال بالانترنيت</string>
+    <string name="enter_name">المرجو إدخال الإسم</string>
+    <string name="enter_email">المرجو إدخال الإيميل</string>
+    <string name="enter_message">المرجو إدخال الرسالة</string>
+
+    <!-- Dialog raitng us -->
+    <string name="rate_us_title">تقييم التطبيق</string>
+    <string name="submit_rate_us">تأكيد</string>
+    <string name="cancel_rate_us">لاحقا</string>
+    <string name="rate_us_body_msg">يبدوا أنك تستمتع باستعمال تطبيقنا، نرجوا تقييمه بخمس نجوم على المتجر، شكراً.</string>
+
+
+    <!-- categories name -->
+    <string name="all_stories">جميع القصص</string>
+    <string name="all_categories">جميع الأصناف</string>
+    <string name="joha_stories">قصص جحا</string>
+    <string name="general_stories">قصص منوعة</string>
+    <string name="animals_stories">قصص الحيوانات</string>
+    <string name="anbiaa_stories">قصص الأنبياء</string>
+    <string name="favorites_list">مفضلتي</string>
+
+
+    <string name="the_name_hint">الإسم..</string>
+    <string name="email_hint">البريد الإلكتروني..</string>
+    <string name="the_message_hint">الرسالة..</string>
+    <string name="the_name">الإسم :</string>
+    <string name="email">البريد الإلكتروني :</string>
+    <string name="the_message">الرسالة :</string>
+    <string name="send_button">إرسال</string>
+    <string name="cancel_button">إلغاء</string>
+    <string name="enter_name_msg">أدخل الإسم</string>
+    <string name="enter_email_msg">أدخل البريد الإلكتروني</string>
+    <string name="enter_message_msg">أدخل الرسالة</string>
+
+    <string name="app_google_play_store_link">"https://play.google.com/store/apps/details?id="</string>
+    <string name="app_market_link">"market://details?id="</string>
+
+    <!-- Sharing dialog -->
+    <string name="sharing_title">شارك التطبيق مع العائلة و الأصدقاء :)</string>
+    <string name="sharing_subject">قصص للأطفال</string>
+    <string name="sharing_message">تطبيق قصص الأطفال الجديد، قصص جديدة، منمقة و مختارة،قم بتحميلها من متجر جوجل بلاي عبر الرابط التالي: </string>
+
+
+</resources>

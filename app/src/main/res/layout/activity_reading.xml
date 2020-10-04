@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".ui.reading.ReadingActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/toolbar_title"
+            style="@style/Toolbar.TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/arajozoor" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/story_image"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                tools:ignore="ContentDescription" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/story_title"
+                style="@style/Toolbar.TitleText"
+                android:layout_width="wrap_content"
+                android:padding="1dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/story_image"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/arajozoor"
+                android:textColor="@color/reading_title"/>
+
+
+            <com.yoham.storieskids.utils.TextViewEx
+                android:lineSpacingExtra="2dp"
+                android:id="@+id/story_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/story_title"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="52dp"
+                android:maxLength="5000"
+                android:paddingBottom="5dp"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/adMobView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:gravity="center|bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#904e95</color>
+    <color name="colorPrimaryDark">#ba876b</color>
+    <color name="colorAccent">#dbc8cb</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_gray">#dbdbdb</color>
+    <color name="black">#000000</color>
+    <color name="black_effective">#2a2a2a</color>
+    <color name="dark_gray">#696969</color>
+
+    <color name="color_gradient_1">#eeb799</color>
+    <color name="color_gradient_2">#904e95</color>
+
+    <color name="main_gradient_1">#e65783</color>
+    <color name="main_gradient_2">#884674</color>
+
+
+    <color name="color_gradient_item_1">#fceabb</color>
+    <color name="color_gradient_item_2">#FDD058</color>
+    <color name="red">#FF0000</color>
+    <color name="footer_text">#E2E2E2</color>
+
+    <color name="reading_title">#FF8E86</color>
+
+</resources>
