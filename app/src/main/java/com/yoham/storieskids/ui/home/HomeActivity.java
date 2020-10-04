@@ -30,6 +30,9 @@ import com.yoham.storieskids.ui.rate.RateUsDialog;
 import com.yoham.storieskids.ui.storiesList.StoriesListActivity;
 import com.yoham.storieskids.utils.AppConstants;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import static com.yoham.storieskids.utils.AppUtils.openPlayStoreForRatingApp;
 import static com.yoham.storieskids.utils.AppUtils.openShareDialog;
 
@@ -61,6 +64,8 @@ public class HomeActivity extends BaseActivity implements IHomeView {
     AppCompatTextView mAppVersion;
     //endregion
 
+    @NotNull
+    @Contract("_ -> new")
     public static Intent getStartIntent(Context context) {
         return new Intent(context, HomeActivity.class);
     }
@@ -116,7 +121,7 @@ public class HomeActivity extends BaseActivity implements IHomeView {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NotNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.favoris_menu_item : {
                 mPresenter.onOpenFavoritesActivity();
