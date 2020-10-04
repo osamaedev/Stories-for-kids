@@ -17,7 +17,6 @@ import com.yoham.storieskids.utils.AppConstants;
 
 public class SplashActivity extends BaseActivity implements ISplashView {
 
-
     private SplashPresenter<ISplashView> mPresenter;
 
     private Handler mHandler;
