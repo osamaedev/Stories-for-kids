@@ -34,21 +34,13 @@ public class SplashActivity extends BaseActivity implements ISplashView {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         setUnBinder(ButterKnife.bind(this));
-
         mPresenter = new SplashPresenter<>(getDataManager(), getSchedulerProvider(), getCompositeDisposable());
-
         mHandler = new Handler();
-
         mPresenter.onAttach(this);
-
         setUpDatabase();
-
         setUp();
-
         mPresenter.onStartSplashAnimation();
-
         mPresenter.onStartHomeActivity();
 
     }
@@ -69,6 +61,7 @@ public class SplashActivity extends BaseActivity implements ISplashView {
         this.startActivity(HomeActivity.getStartIntent(SplashActivity.this));
         this.finish();
     }
+
     @Override
     public void showSplashAnimation() {
         mHandler.postDelayed(() -> new PuffInAnimation(mImgSplash).animate(), 1000);
@@ -84,7 +77,7 @@ public class SplashActivity extends BaseActivity implements ISplashView {
     protected void onPause() {
         super.onPause();
 
-        if(!this.isFinishing()) {
+        if (!this.isFinishing()) {
             mHandler.removeCallbacksAndMessages(null);
             getIntent().putExtra(AppConstants.SPLASH_ACTIVITY_PAUSED, true);
         }
@@ -93,7 +86,7 @@ public class SplashActivity extends BaseActivity implements ISplashView {
     @Override
     protected void onResume() {
         super.onResume();
-        if(getIntent().getExtras() != null
+        if (getIntent().getExtras() != null
                 && getIntent().getExtras().getBoolean(AppConstants.SPLASH_ACTIVITY_PAUSED)) {
             startHomeActivity();
         }
