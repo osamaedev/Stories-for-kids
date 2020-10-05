@@ -1,4 +1,4 @@
-# Stories_for_kids
+# Kids Stories
 This is my first Android application, I designed it using MVP pattern, also used some famous libraries like:
 
     -> Picasso
