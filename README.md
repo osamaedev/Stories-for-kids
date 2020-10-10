@@ -11,3 +11,5 @@ For the SQLCipher use case is just an example how to implement it, and not the b
 application, with some basic knowledge you can extract it. and in a real use case the key should be protected with more efficient and secure ways.
 
 For the use of the RecyclerViews use case is very basic, but it's implemented also respecting the MVP design pattern.
+
+NOTE: some libraries used in this project are deprecated now.
