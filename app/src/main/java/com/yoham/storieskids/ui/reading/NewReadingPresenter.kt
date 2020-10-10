@@ -10,6 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.reactive.asFlow
+import kotlinx.coroutines.reactive.awaitFirst
 import kotlinx.coroutines.reactive.openSubscription
 
 class NewReadingPresenter<V : IReadingView>(val dataManager: DataManager,
@@ -41,6 +42,21 @@ class NewReadingPresenter<V : IReadingView>(val dataManager: DataManager,
             } catch (e: Exception) {
                 rootView.hideLoading()
                 rootView.showMessage(R.string.general_error)
+            }
+        }
+    }
+
+
+    fun loadStoryFromAnyReactiveStream(storyId: Int) {
+        rootView.showLoading()
+        CoroutineScope(Dispatchers.IO).launch {
+            val story = dataManager.getStoryById(storyId).awaitFirst()
+            launch {
+                rootView.setStoryTitle(story.title)
+                rootView.setStoryToolBarTitle(story.title)
+                rootView.setStoryBody(story.body)
+                rootView.setStoryImage(story.image)
+                rootView.hideLoading()
             }
         }
     }
