@@ -20,6 +20,7 @@ class NewReadingPresenter<V : IReadingView>(val dataManager: DataManager,
     fun loadStoryById(storyId: Int) {
         rootView.showLoading()
         CoroutineScope(Dispatchers.IO).launch {
+
             // we use this openSubscription() method and consume
             // element like they were emitted by a channel
             val storyItem = dataManager.getStoryById(storyId).openSubscription().receive()
