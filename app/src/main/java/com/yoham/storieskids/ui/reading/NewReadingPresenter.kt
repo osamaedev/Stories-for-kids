@@ -14,8 +14,8 @@ import kotlinx.coroutines.reactive.awaitFirst
 import kotlinx.coroutines.reactive.openSubscription
 
 class NewReadingPresenter<V : IReadingView>(val dataManager: DataManager,
-                                            val schedulerProvider: SchedulerProvider,
-                                            val disposables: CompositeDisposable) : BasePresenter<V>(dataManager, schedulerProvider, disposables) {
+                                            val scheduler: ISchedulerProvider,
+                                            val disposables: CompositeDisposable) : BasePresenter<V>(dataManager, scheduler, disposables) {
 
 
     fun loadStoryById(storyId: Int) {
@@ -51,7 +51,7 @@ class NewReadingPresenter<V : IReadingView>(val dataManager: DataManager,
         rootView.showLoading()
         CoroutineScope(Dispatchers.IO).launch {
             val story = dataManager.getStoryById(storyId).awaitFirst()
-            launch {
+            launch(Dispatchers.Main) {
                 rootView.setStoryTitle(story.title)
                 rootView.setStoryToolBarTitle(story.title)
                 rootView.setStoryBody(story.body)

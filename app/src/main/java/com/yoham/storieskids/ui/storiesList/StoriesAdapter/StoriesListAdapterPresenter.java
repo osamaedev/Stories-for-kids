@@ -124,36 +124,36 @@ public class StoriesListAdapterPresenter<V extends IStoriesListView> extends Bas
 
     @Override
     public void getJohaStories() {
-        getDataManager()
-                .getAllJohaStories()
-                .subscribeOn(getSchedulerProvider().io())
-                .observeOn(getSchedulerProvider().ui())
-                .subscribe(new Observer<List<Story>>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        getCompositeDisposable().add(d);
-                    }
-
-                    @Override
-                    public void onNext(List<Story> stories) {
-                        mListStories = stories;
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Log.d(TAG, "Error in loading stories");
-                        Log.d(TAG, e.getMessage());
-                        getRootView().showMessage(R.string.general_error);
-                        getRootView().hideLoading();
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        Log.d(TAG, "On Complete Called !!!");
-                        getRootView().updateRecyclerView();
-                        getRootView().hideLoading();
-                    }
-                });
+//        getDataManager()
+//                .getAllJohaStories()
+//                .subscribeOn(getSchedulerProvider().io())
+//                .observeOn(getSchedulerProvider().ui())
+//                .subscribe(new Observer<List<Story>>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//                        getCompositeDisposable().add(d);
+//                    }
+//
+//                    @Override
+//                    public void onNext(List<Story> stories) {
+//                        mListStories = stories;
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        Log.d(TAG, "Error in loading stories");
+//                        Log.d(TAG, e.getMessage());
+//                        getRootView().showMessage(R.string.general_error);
+//                        getRootView().hideLoading();
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//                        Log.d(TAG, "On Complete Called !!!");
+//                        getRootView().updateRecyclerView();
+//                        getRootView().hideLoading();
+//                    }
+//                });
     }
 
     @Override

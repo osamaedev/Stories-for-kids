@@ -24,6 +24,7 @@ import com.yoham.storieskids.utils.TextViewEx;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -40,6 +41,8 @@ public class ReadingActivity extends BaseActivity implements IReadingView {
     private InterstitialAd mInterstitial;
 
     private Handler mHandler;
+
+    private NewReadingPresenter<IReadingView> newReadingPresenter;
 
     //endregion
 
@@ -85,6 +88,11 @@ public class ReadingActivity extends BaseActivity implements IReadingView {
 
         mHandler = new Handler();
 
+
+        newReadingPresenter = new NewReadingPresenter<>(getDataManager(), getSchedulerProvider(), getCompositeDisposable());
+        newReadingPresenter.onAttach(this);
+        newReadingPresenter.loadStoryById(getIntent().getExtras().getInt(AppConstants.STORY_ID_KEY));
+
         setUp();
 
         setUpAds();
@@ -94,7 +102,7 @@ public class ReadingActivity extends BaseActivity implements IReadingView {
     @Override
     public void setUp() {
         setSupportActionBar(mToolbar);
-        if(getSupportActionBar() != null) {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -132,8 +140,7 @@ public class ReadingActivity extends BaseActivity implements IReadingView {
             } else {
                 this.favouriteItem.setIcon(R.drawable.ic_favorite);
             }
-        }
-        else {
+        } else {
             mPresenter.onLoadIconFavorite();
         }
     }
@@ -170,7 +177,7 @@ public class ReadingActivity extends BaseActivity implements IReadingView {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            case android.R.id.home : {
+            case android.R.id.home: {
                 this.onBackPressed();
                 startActivity(HomeActivity.getStartIntent(this));
                 return true;
@@ -181,7 +188,8 @@ public class ReadingActivity extends BaseActivity implements IReadingView {
                 return true;
             }
 
-            default: return super.onOptionsItemSelected(item);
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
