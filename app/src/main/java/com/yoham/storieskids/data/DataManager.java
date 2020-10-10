@@ -7,8 +7,11 @@ import com.yoham.storieskids.data.db.model.Category;
 import com.yoham.storieskids.data.db.model.Story;
 import com.yoham.storieskids.data.prefs.PreferencesHelper;
 
+import org.reactivestreams.Publisher;
+
 import java.util.List;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 
@@ -27,12 +30,13 @@ public class DataManager implements IDataManager {
     }
 
     @Override
-    public Single<Story> getStoryById(int id) {
+    public Flowable<Story> getStoryById(int id) {
         return DBHelper.getInstance(mContext).getStoryById(id);
     }
 
+
     @Override
-    public Observable<List<Story>> getAllJohaStories() {
+    public Flowable<List<Story>> getAllJohaStories() {
         return DBHelper.getInstance(mContext).getAllJohaStories();
     }
 

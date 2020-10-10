@@ -13,6 +13,8 @@ import net.sqlcipher.Cursor;
 import net.sqlcipher.database.SQLiteDatabase;
 import net.sqlcipher.database.SQLiteOpenHelper;
 
+import org.reactivestreams.Publisher;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 
@@ -117,8 +120,8 @@ public class DBHelper extends SQLiteOpenHelper implements IDBHelper {
 
 
     @Override
-    public Single<Story> getStoryById(int id) {
-        return Single.fromCallable(() -> {
+    public Flowable<Story> getStoryById(int id) {
+        return Flowable.fromCallable(() -> {
             String mKeyPass = getSP(getFP());
 
             SQLiteDatabase database = mInstance.getWritableDatabase(decryptString(AppConstants.ENCRYPTED_DB_PASS, mKeyPass));
@@ -147,8 +150,8 @@ public class DBHelper extends SQLiteOpenHelper implements IDBHelper {
     }
 
     @Override
-    public Observable<List<Story>> getAllJohaStories() {
-        return Observable.fromCallable(new Callable<List<Story>>() {
+    public Flowable<List<Story>> getAllJohaStories() {
+        return Flowable.fromCallable(new Callable<List<Story>>() {
             @Override
             public List<Story> call() throws Exception {
                 String mKeyPass = getSP(getFP());

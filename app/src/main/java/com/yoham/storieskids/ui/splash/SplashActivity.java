@@ -42,7 +42,6 @@ public class SplashActivity extends BaseActivity implements ISplashView {
         setUp();
         mPresenter.onStartSplashAnimation();
         mPresenter.onStartHomeActivity();
-
     }
 
 

@@ -4,14 +4,16 @@ import com.yoham.storieskids.data.db.model.Category;
 import com.yoham.storieskids.data.db.model.Story;
 
 import java.util.List;
+
+import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 
 public interface IDBHelper {
 
-    Single<Story> getStoryById(int id);
+    Flowable<Story> getStoryById(int id);
 
-    Observable<List<Story>> getAllJohaStories();
+    Flowable<List<Story>> getAllJohaStories();
 
     Observable<List<Story>> getAllGeneralStories();
 

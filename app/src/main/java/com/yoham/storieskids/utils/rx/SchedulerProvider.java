@@ -6,7 +6,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class SchedulerProvider implements ISchedulerProvider {
 
-
     @Override
     public Scheduler ui() {
         return AndroidSchedulers.mainThread();

@@ -60,6 +60,8 @@
     <string name="sharing_title">شارك التطبيق مع العائلة و الأصدقاء :)</string>
     <string name="sharing_subject">قصص للأطفال</string>
     <string name="sharing_message">تطبيق قصص الأطفال الجديد، قصص جديدة، منمقة و مختارة،قم بتحميلها من متجر جوجل بلاي عبر الرابط التالي: </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -2,6 +2,8 @@ package com.yoham.storieskids.utils;
 
 import com.mobapphome.simpleencryptorlib.SimpleEncryptor;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
@@ -15,6 +17,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 public final class SecurityUtils {
 
+    @NotNull
     public static String getFP() {
         String[] b = AppConstants.TITLE.split("_");
         return b[0] + b[3] + b[1] + b[4] + b[2];

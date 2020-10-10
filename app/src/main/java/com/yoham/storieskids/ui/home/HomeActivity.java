@@ -51,6 +51,7 @@ public class HomeActivity extends BaseActivity implements IHomeView {
     // endregion
 
     //region Binding views
+
     @BindView(R.id.button_read)
     AppCompatImageButton mBtnRead;
 
@@ -62,6 +63,7 @@ public class HomeActivity extends BaseActivity implements IHomeView {
 
     @BindView(R.id.home_app_version)
     AppCompatTextView mAppVersion;
+
     //endregion
 
     @NotNull
